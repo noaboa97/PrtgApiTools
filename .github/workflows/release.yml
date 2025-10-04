@@ -31,12 +31,12 @@ jobs:
         run: .\Tools\Update-Manifest.ps1
 
       - name: Create Release folder
-        run: New-Item Release -Type Directory
+        run: New-Item ..\Release -Type Directory
         
       - name: Compress
-        run: Compress-Archive .\* -DestinationPath .\Release\PrtgApiTools.Zip
+        run: Compress-Archive .\* -DestinationPath ..\Release\PrtgApiTools.Zip
 
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: Release\PrtgApiTools.Zip
+          artifacts: ..\Release\PrtgApiTools.Zip
