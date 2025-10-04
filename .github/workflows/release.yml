@@ -33,17 +33,17 @@ jobs:
       - name: Update Manifest
         run: .\Tools\Update-Manifest.ps1
       - name: switching from HTTPS to SSH
-        run: git remote set-url origin ${{ secrets.ssh }}
+        run: git remote set-url github ${{ secrets.ssh }}
       - name: check for changes
         run: git status
       - name: stage changed files
         run: git add .
       - name: commit changed files
         run: git commit -m "Auto updating Manifest with new public functions"
-      - name: fetch from master
-        run: git fetch origin main
-      - name: push code to master
-        run: git push origin HEAD:main
+      - name: fetch from main
+        run: git fetch github main
+      - name: push code to main
+        run: git push github HEAD:main
 
       - name: Load Module
         run: Import-Module .\PrtgApiTools.psm1
