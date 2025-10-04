@@ -30,6 +30,9 @@ jobs:
       - name: Run a one-line script
         run: .\Tools\Update-Manifest.ps1
 
+      - name: Create Release folder
+        run: New-Item Release -Type Directory
+        
       - name: Compress
         run: Compress-Archive .\* -DestinationPath .\Release\PrtgApiTools.Zip
 
