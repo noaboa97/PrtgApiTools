@@ -32,8 +32,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Update Manifest
         run: .\Tools\Update-Manifest.ps1
-      - name: switching from HTTPS to SSH
-        run: git remote set-url github ${{ secrets.ssh }}
       - name: check for changes
         run: git status
       - name: stage changed files
