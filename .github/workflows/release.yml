@@ -50,7 +50,7 @@ jobs:
         run: New-Item ..\Release -Type Directory
         
       - name: Compress
-        run: Compress-Archive .\* -DestinationPath ..\Release\PrtgApiTools.Zip
+        run: Compress-Archive .\* -DestinationPath ..\Release\PrtgApiTools-${{ env.Version }}.zip
 
       - name: Create Release
         uses: ncipollo/release-action@v1
