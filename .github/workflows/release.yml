@@ -34,7 +34,7 @@ jobs:
         run: Import-Module .\PrtgApiTools.psm1
 
       - name: Get Version
-        run: echo "VERSION=$((get-module).version.tostring())" >> $Env:GITHUB_ENV
+        run: echo "VERSION=$((get-module PrtgApiTools).version.tostring())" >> $Env:GITHUB_ENV
 
       - name: Create Release folder
         run: New-Item ..\Release -Type Directory
