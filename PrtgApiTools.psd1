@@ -1,4 +1,4 @@
-﻿#
+#
 # Modulmanifest für das Modul "PrtgApiTools"
 #
 # Generiert von: Noah Li Wan Po
@@ -120,6 +120,7 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
+
 
 
 
