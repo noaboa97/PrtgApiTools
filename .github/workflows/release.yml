@@ -34,7 +34,7 @@ jobs:
         run: Import-Module .\PrtgApiTools.psm1
 
       - name: Get Version
-        run: echo "VERSION=$((Import-Localizeddata -Filename .\PrtgApiTools.psd1).ModuleVersion)" >> $Env:GITHUB_ENV
+        run: echo "VERSION=$((Import-Localizeddata -Filename PrtgApiTools.psd1).ModuleVersion)" >> $Env:GITHUB_ENV
 
       - name: Create Release folder
         run: New-Item ..\Release -Type Directory
