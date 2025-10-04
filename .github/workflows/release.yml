@@ -57,3 +57,4 @@ jobs:
         with:
           artifacts: ..\Release\PrtgApiTools.Zip
           tag: ${{ env.Version }}
+          allowUpdates: "true"
