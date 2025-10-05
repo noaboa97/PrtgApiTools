@@ -59,14 +59,13 @@ Add-SNMPCustomTable
 
 ``` powershell
 $channel = @{
-"name" = "Traffic IN"
+    "name" = "Traffic IN"
     "type" = "diff"
     "unit" = "BytesBandwidth"
     "valuelookup" = ""
     "customunit" = ""
     "column" = "ifHCInOctets"
 }
-
 $channel2 = @{
     "name" = "Traffic OUT"
     "type" = "diff"
