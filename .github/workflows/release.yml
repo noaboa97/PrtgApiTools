@@ -44,7 +44,7 @@ jobs:
       - name: Run DocuPS
         run: |
           Save-Module PrtgAPI .\ -Repository PSGallery
-          Import-Module PrtgAPI
+          Import-Module .\PrtgAPI
           Import-Module .\DocuPS\DocuPS.psm1
           Import-Module .\PrtgApiTools.psm1
           ConvertTo-Md -ModuleName PrtgApiTools -FileName "Readme.md" -Type Module
