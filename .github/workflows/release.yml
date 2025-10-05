@@ -69,6 +69,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: ..\Release\PrtgApiTools.Zip
+          artifacts: ..\Release\PrtgApiTools-${{ env.Version }}.Zip
           tag: ${{ env.Version }}
           allowUpdates: "true"
