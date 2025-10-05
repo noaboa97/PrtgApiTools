@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: noaboa97/DocuPS
-          path: ../DocuPS
+          path: DocuPS
 
       - name: Run DocuPS
         run: |
