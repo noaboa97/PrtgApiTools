@@ -69,7 +69,7 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Aus diesem Modul zu exportierende Funktionen. Um optimale Leistung zu erzielen, verwenden Sie keine Platzhalter und löschen den Eintrag nicht. Verwenden Sie ein leeres Array, wenn keine zu exportierenden Funktionen vorhanden sind.
-FunctionsToExport = @("Add-PrtgTag", "Add-SNMPCustomTable", "Check-PrtgLogin", "Find-PrtgUser", "Get-ObjectAccessRights", "Get-PrtgGroupAccessRights", "Get-PrtgUser", "Get-PrtgUserGroups", "New-PrtgUsergroup", "Remove-PrtgTag", "Replace-PrtgTag", "Set-ObjectAccessRights")
+FunctionsToExport = @("Add-PrtgTag", "Add-SNMPCustomTable", "Find-PrtgUser", "Get-ObjectAccessRights", "Get-PrtgGroupAccessRights", "Get-PrtgUser", "Get-PrtgUserGroups", "New-PrtgUsergroup", "Remove-PrtgTag", "Replace-PrtgTag", "Set-ObjectAccessRights", "Test-PrtgLogin")
 
 # Aus diesem Modul zu exportierende Cmdlets. Um optimale Leistung zu erzielen, verwenden Sie keine Platzhalter und löschen den Eintrag nicht. Verwenden Sie ein leeres Array, wenn keine zu exportierenden Cmdlets vorhanden sind.
 CmdletsToExport = '*'
@@ -120,6 +120,7 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
+
 
 
 

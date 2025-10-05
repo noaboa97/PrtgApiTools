@@ -8,7 +8,6 @@ Currently it provides the following functions
 | ------------- | ------------- |:------:|
 | Add-PrtgTag | Adds a tag to a specified PRTG object (Probe, Group, Device, or Sensor). | PowerShell Function |
 | Add-SNMPCustomTable | Creates a new PRTG SNMP Custom Table Sensor | PowerShell Function |
-| Check-PrtgLogin |   | PowerShell Function |
 | Find-PrtgUser | Retreives one or multiple PRTG user accounts with settings | PowerShell Function |
 | Get-ObjectAccessRights | Retrieves and displays access rights for a specified PRTG object. | PowerShell Function |
 | Get-PrtgGroupAccessRights | Retrieves the effective access rights for all user groups on a specified PRTG group object.
@@ -18,7 +17,8 @@ This function is depreciated. Use Get-ObjectAccessRights | PowerShell Function |
 | New-PrtgUsergroup | Creates a new user group in PRTG with optional Active Directory integration and user access settings. | PowerShell Function |
 | Remove-PrtgTag | Removes a specific tag or all tags from a PRTG object such as Probe, Group, Device, or Sensor. | PowerShell Function |
 | Replace-PrtgTag | Replaces an existing tag with a new tag on a specified PRTG object (Probe, Group, Device, or Sensor). | PowerShell Function |
-| Set-ObjectAccessRights | Sets custom access rights on a PRTG object, breaking inheritance if needed. | PowerShell Function | 
+| Set-ObjectAccessRights | Sets custom access rights on a PRTG object, breaking inheritance if needed. | PowerShell Function |
+| Test-PrtgLogin |   | PowerShell Function | 
  
 ### Add-PrtgTag
 #### SYNTAX
@@ -78,18 +78,6 @@ $channel2 = @{
 $Channels = @($channel, $channel2)
 
 Add-SnmpCustomTable -device $device -rowname "port2" -sensorname "port2 / INET" -SnmpTableOid "1.3.6.1.2.1.31.1.1" -ColumnIdentifier "ifName" -Channels $Channels
-```
-
-### Check-PrtgLogin
-#### SYNTAX
-``` powershell
-Check-PrtgLogin
-```
-
-#### Examples
-
-``` powershell
- 
 ```
 
 ### Find-PrtgUser
@@ -273,5 +261,17 @@ Get-Device "Firewall01" | Get-ObjectAccessRights | Set-ObjectAccessRights
 $obj = Get-Group "Web Servers"
 $obj.accessrights[0].rights = "Full Access"
 $obj | Set-ObjectAccessRights
+```
+
+### Test-PrtgLogin
+#### SYNTAX
+``` powershell
+Test-PrtgLogin
+```
+
+#### Examples
+
+``` powershell
+ 
 ```
 
