@@ -71,4 +71,5 @@ jobs:
         with:
           artifacts: ..\Release\PrtgApiTools-${{ env.Version }}.Zip
           tag: ${{ env.Version }}
+          removeArtifacts: "true"
           allowUpdates: "true"
