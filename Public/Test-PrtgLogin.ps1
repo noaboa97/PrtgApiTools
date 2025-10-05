@@ -1,4 +1,4 @@
-function Check-PrtgLogin {
+function Test-PrtgLogin {
 
     if(Get-PrtgClient){
         #Do nothing, already connected to PRTG server

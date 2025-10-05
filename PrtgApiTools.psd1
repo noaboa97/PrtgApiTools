@@ -12,7 +12,7 @@
 RootModule = 'PrtgApiTools.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0.1'
 
 # Unterstützte PSEditions
 # CompatiblePSEditions = @()

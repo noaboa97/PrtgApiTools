@@ -35,7 +35,7 @@ function Get-ObjectAccessRights{
             [bool]$reloadusergroups       
         )
     Begin{
-        Check-PrtgLogin
+        Test-PrtgLogin
         # Get all usergroups, is needed because accessrights only have the ID of the group and not the name
         if(-not $script:usergroups -or $reloadusergroups){
             Write-Host "Usergroups not yet requested - requesting..."
