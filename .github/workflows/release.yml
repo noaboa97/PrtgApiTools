@@ -38,7 +38,7 @@ jobs:
       - name: Checkout DocuPS
         run: | 
           cd ..
-          git clone git@github.com:noaboa97/DocuPS.git
+          git clone https://github.com/noaboa97/PrtgApiTools.git
         
 
       - name: Run DocuPS
