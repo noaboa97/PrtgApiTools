@@ -2,7 +2,7 @@
 [string]$ManifestFile = "$ModuleRoot\*.psd1"
 [string]$PublicFolder = "$ModuleRoot\Public"
 
-# PrÃ¼fen, ob Manifest existiert
+# Prüfen, ob Manifest existiert
 if (-not (Test-Path -Path $ManifestFile)) {
     Write-Error "Manifestdatei '$ManifestFile' nicht gefunden."
     exit 1
@@ -27,8 +27,8 @@ $psd1Lines = Get-Content -Path $ManifestFile -Raw -Encoding UTF8 -ErrorAction St
 # Alte Zeile ersetzen (auch wenn sie leer ist: FunctionsToExport = @())
 $updatedContent = $psd1Lines -replace 'FunctionsToExport\s*=\s*@\([^\)]*\)', $newExportLine
 
-# Ãœberschreiben
-Set-Content -Path $ManifestFile -Value $updatedContent -Encoding UTF8 -Force
+# Überschreiben
+$updatedContent | Out-File -FilePath $ManifestFile -Encoding UTF8 -Force -NoNewline
 
 Write-Host "Manifest wurde aktualisiert mit folgenden Funktionen:"
 $functionNames | ForEach-Object { Write-Host " - $_" }
