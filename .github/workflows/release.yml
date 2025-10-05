@@ -27,22 +27,32 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      
 
       # Runs a single command using the runners shell
       - name: Update Manifest
         run: .\Tools\Update-Manifest.ps1
-      - name: Git Config
-        run: | 
-          git config user.name "github-actions [bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Auto updating Manifest file"
-          git push
+
 
       - name: Load Module
         run: Import-Module .\PrtgApiTools.psm1
 
+      - name: Pull DocuPS
+        run: git pull -C .. git@github.com:noaboa97/DocuPS.git
+
+      - name: Run DocuPS
+        run: |
+          Import-Module ..\DocuPS\DocuPS.psm1
+          ConvertTo-Md -ModuleName PrtgApiTools -FileName "Readme.md" -Type Module
+          
+      - name: Push Back Changes
+        run: | 
+          git config user.name "github-actions [bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto updating Manifest & Readme"
+          git push
+          
       - name: Get Version
         run: echo "VERSION=$((Import-Localizeddata -Filename PrtgApiTools.psd1 -BaseDirectory .\).ModuleVersion)" >> $Env:GITHUB_ENV
 
