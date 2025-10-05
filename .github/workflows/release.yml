@@ -44,7 +44,7 @@ jobs:
       - name: Run DocuPS
         run: |
           Import-Module .\DocuPS\DocuPS.psm1
-          ConvertTo-Md -ModuleName PrtgApiTools -FileName "Readme.md" -Type Module
+          ConvertTo-Md -ModuleName .\PrtgApiTools.psm1 -FileName "Readme.md" -Type Module
           
       - name: Push Back Changes
         run: | 
