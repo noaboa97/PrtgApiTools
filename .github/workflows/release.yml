@@ -33,12 +33,13 @@ jobs:
 
       - name: Load Module
         run: Import-Module .\PrtgApiTools.psm1
-
-      - name: Pull DocuPS
-        run: |
-          cd ..
-          git pull git@github.com:noaboa97/DocuPS.git
-          cd PrtgApiTools
+      
+      
+      - name: Checkout DocuPS
+        uses: actions/checkout@v5
+        with:
+          repository: noaboa97/DocuPS
+          path: ../DocuPS
 
       - name: Run DocuPS
         run: |
