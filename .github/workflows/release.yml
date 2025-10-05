@@ -43,6 +43,7 @@ jobs:
 
       - name: Run DocuPS
         run: |
+          Install-Package PrtgAPI
           Import-Module .\DocuPS\DocuPS.psm1
           Import-Module .\PrtgApiTools.psm1
           ConvertTo-Md -ModuleName PrtgApiTools -FileName "Readme.md" -Type Module
